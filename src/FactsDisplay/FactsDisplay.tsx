@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import "./FactsDisplay.css";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import Fab from "@mui/material/Fab";
 
 const colorArray = ["#5FAD56", "#F2C14E", "#F78154", "#4D9078", "#B4436C"];
 const lengthOfColorArray = colorArray.length;
