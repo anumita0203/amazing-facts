@@ -21,19 +21,19 @@ const FactsDisplay = () => {
         const factsArray = text
           .split("\n")
           .filter((fact) => fact.trim() !== "");
-        setFacts(factsArray);
+        setFacts(ShuffleFacts(factsArray));
       })
       .catch((error) => {
         setError(error);
       });
   }, []);
 
-  function ShuffleFacts() {
-    const shuffledFacts = facts
+  function ShuffleFacts(fetchedFacts: string[]) {
+    const shuffledFacts = fetchedFacts
       .map((value) => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
-    setFacts(shuffledFacts);
+    return shuffledFacts;
   }
 
   return (
@@ -56,9 +56,6 @@ const FactsDisplay = () => {
               </li>
             ))}
           </ul>
-          <Fab color="primary" aria-label="add" onClick={ShuffleFacts}>
-            <ShuffleIcon />
-          </Fab>
         </>
       )}
     </div>
