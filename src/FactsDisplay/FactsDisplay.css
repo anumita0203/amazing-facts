@@ -22,26 +22,17 @@
   color: #333;
   font-family: Arial, sans-serif;
   transition: transform 0.3s;
-  width: calc(100%);
+  width: calc(100% - 10px);
   /* Ensures some padding inside the card */
   box-sizing: border-box;
   /* Include padding and border in the element's total width and height */
 }
 
-
 .fact-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .fact-text {
   font-size: 18px;
   line-height: 1.6;
 }
-
-/* .fact-card:nth-child(odd) {
-  background-color: #ffeb3b;
-}
-
-.fact-card:nth-child(even) {
-  background-color: #8bc34a;
-} */
