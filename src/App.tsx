@@ -1,7 +1,5 @@
-// src/App.js
-import React from 'react';
-import './App.css';
-import FactsDisplay from './FactsDisplay';
+import "./App.css";
+import FactsDisplay from "./FactsDisplay/FactsDisplay";
 
 function App() {
   return (
@@ -12,4 +10,3 @@ function App() {
 }
 
 export default App;
-
