@@ -1,0 +1,47 @@
+.facts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fact-list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.fact-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s;
+  width: calc(100%);
+  /* Ensures some padding inside the card */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+}
+
+
+.fact-card:hover {
+  transform: scale(1.05);
+}
+
+.fact-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* .fact-card:nth-child(odd) {
+  background-color: #ffeb3b;
+}
+
+.fact-card:nth-child(even) {
+  background-color: #8bc34a;
+} */
