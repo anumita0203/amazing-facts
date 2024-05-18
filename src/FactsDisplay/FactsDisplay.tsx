@@ -1,5 +1,4 @@
-// src/FactsDisplay.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./FactsDisplay.css";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import Fab from "@mui/material/Fab";
