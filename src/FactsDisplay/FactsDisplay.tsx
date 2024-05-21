@@ -3,12 +3,20 @@ import "./FactsDisplay.css";
 
 const colorArray = ["#5FAD56", "#F2C14E", "#F78154", "#4D9078", "#B4436C"];
 const lengthOfColorArray = colorArray.length;
-const FactsDisplay = () => {
+const tabFileMapping: { [key: number]: string } = {
+  0: "/scienceFacts.txt",
+  1: "/mindsetFacts.txt",
+};
+interface TabPanelProps {
+  value: number;
+}
+const FactsDisplay = (props: TabPanelProps) => {
+  const { value } = props;
   const [facts, setFacts] = useState<string[]>([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/facts.txt")
+    fetch(tabFileMapping[value])
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -24,7 +32,7 @@ const FactsDisplay = () => {
       .catch((error) => {
         setError(error);
       });
-  }, []);
+  }, [value]);
 
   function ShuffleFacts(fetchedFacts: string[]) {
     const shuffledFacts = fetchedFacts
@@ -36,7 +44,6 @@ const FactsDisplay = () => {
 
   return (
     <div className="facts-container">
-      <h1>Amazing Facts</h1>
       {error ? (
         <p>Error: {error}</p>
       ) : (
