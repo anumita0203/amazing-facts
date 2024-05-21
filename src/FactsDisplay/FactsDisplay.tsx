@@ -49,17 +49,23 @@ const FactsDisplay = (props: TabPanelProps) => {
       ) : (
         <>
           <ul className="fact-list">
-            {facts.map((fact, index) => (
-              <li
-                key={index}
-                className="fact-card"
-                style={{
-                  backgroundColor: colorArray[index % lengthOfColorArray],
-                }}
-              >
-                <p className="fact-text">{fact}</p>
-              </li>
-            ))}
+            {facts.length > 0 ? (
+              facts.map((fact, index) => (
+                <li
+                  key={index}
+                  className="fact-card"
+                  style={{
+                    backgroundColor: colorArray[index % lengthOfColorArray],
+                  }}
+                >
+                  <p className="fact-text">{fact}</p>
+                </li>
+              ))
+            ) : (
+              <p className="fact-text">
+                Author is a bit busy right now, no fact has been added yet!
+              </p>
+            )}
           </ul>
         </>
       )}
